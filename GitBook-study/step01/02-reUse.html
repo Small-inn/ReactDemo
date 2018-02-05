@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        class LikeButton {
+            render() {
+                return (
+                    `
+                        <button class="btn">
+                            <span class="text">顶</span>
+                            <span>👍</span>
+                        </button>
+                    `
+                )
+            }
+        }
+        const box = document.querySelector("#box");
+        const LikeButton1 = new LikeButton();
+        box.innerHTML = LikeButton1.render();
+        
+        const button = document.querySelector(".btn")
+        const spanText = button.querySelector(".text");
+        let isLiked = true;
+        button.addEventListener('click', () => {
+            isLiked = !isLiked;
+            if (isLiked) {
+                spanText.innerHTML = "顶";
+            } else {
+                spanText.innerHTML = "踩";
+            }
+        }, false)
+    </script>
+</body>
+
+</html>

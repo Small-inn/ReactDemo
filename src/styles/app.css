@@ -1,0 +1,29 @@
+.app_container {
+
+}
+
+.app_header {
+    height: 10%;
+    background-color: olive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_header a{
+    flex: 1;
+    text-align: center;
+}
+
+.app_content {
+    height: 80%;
+    background-color: orange;
+}
+
+.app_footer {
+    height: 10%;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
