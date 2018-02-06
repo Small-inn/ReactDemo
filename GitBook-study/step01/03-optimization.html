@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="box"></div>
+    <script>
+        // 0.0 html模板函数
+        const creatDOMFromString = (domString) => {
+            const div = document.createElement('div');
+            div.innerHTML = domString
+            return div
+        }
+        class LikeButton {
+            constructor() {
+                // 1.0 初始状态
+                this.state = {
+                    isLiked: false
+                }
+            }
+            // 2.0 改变状态
+            setState(state) {
+                this.state = state
+                this.el = this.render()
+            }
+            changeLikeText() {
+                this.setState({
+                    isLiked: !this.state.isLiked
+                })
+            }
+            render() {
+                this.el = creatDOMFromString(
+                    `
+                <button class='like-btn'>
+                    <span class='like-text'>${this.state.isLiked ? '取消' : '点赞'}</span>
+                    <span>👍</span>
+                </button>
+                `
+                )
+                this.el.addEventListener('click', this.changeLikeText.bind(this), false)
+
+                return this.el
+            }
+        }
+        let wrapper = new LikeButton()
+        document.querySelector(".box").appendChild(wrapper.render())
+    </script>
 </body>
+
 </html>

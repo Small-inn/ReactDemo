@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <script>
+        const wrapper = document.querySelector(".wrapper")
+        // 1.0 html模板函数
+        const creatDOMFromString = (domString) => {
+            const div = document.createElement('div');
+            div.innerHTML = domString
+            return div
+        }
+        // 2.0 抽离公共组件
+        class Component {
+            // 传递参数
+            constructor(props) {
+                this.props = props
+            }
+            setState(state) {
+                const oldEle = this.el
+                this.state = state
+                this._renderDOM()
+                if (this.onStateChange) this.onStateChange(oldEle, this.el)
+            }
+            _renderDOM() {
+                this.el = creatDOMFromString(this.render())
+                if (this.onClick) {
+                    this.el.addEventListener('click', this.onClick.bind(this), false)
+                }
+                return this.el
+            }
+        }
+        // 3.0 渲染方法
+        const mount = (component, wrapper) => {
+            wrapper.appendChild(component._renderDOM())
+            component.onStateChange = (oldEle, newEle) => {
+                wrapper.insertBefore(newEle, oldEle)
+                wrapper.removeChild(oldEle)
+            }
+        }
+
+
+        class LikeButton extends Component {
+            constructor(props) {
+                // 继承来自父组件的props
+                super(props)
+                this.state = {
+                    isLiked: false
+                }
+            }
+            onClick() {
+                this.setState({
+                    isLiked: !this.state.isLiked
+                    
+                })
+            }
+
+            render() {
+                this.el =
+                    `
+                <button class='like-btn' style="background-color:${this.props.color}">
+                    <span class='like-text'>${this.state.isLiked ? '取消' : '点赞'}</span>
+                    <span>👍</span>
+                </button>
+                `
+                return this.el
+            }
+        }
+        mount(new LikeButton({color:'red'}), wrapper)
+    </script>
+</body>
+
+</html>
