@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {
+    Component
+} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import './css/index.less'
+class Header extends Component{
+    render(){
+        return (
+            <div className="header">
+                <h1>React Study</h1>
+                <p>Hello world</p>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<Header />,document.getElementById("root"))
