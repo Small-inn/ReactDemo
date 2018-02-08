@@ -2,7 +2,7 @@ import React, {
     Component
 } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import registerServiceWorker from './registerServiceWorker';
 
 import './css/index.less'
 class Header extends Component{
@@ -16,4 +16,5 @@ class Header extends Component{
     }
 }
 
-ReactDOM.render(<Header />,document.getElementById("root"))
+ReactDOM.render(<Header />,document.getElementById("root"));
+registerServiceWorker();
