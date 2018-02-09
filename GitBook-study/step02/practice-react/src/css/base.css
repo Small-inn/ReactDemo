@@ -215,7 +215,6 @@ input {
 /* 精灵图缩放 */
 .my_icons::before {
   content: '';
-  background: url(../images/icons/jd-sprites.png) 0 0 no-repeat;
   -webkit-background-size: 200px 200px;
   background-size: 200px 200px;
 }
