@@ -21,7 +21,7 @@ class ChangeProps extends Component {
     render(){
         // const likeText = this.props.likeText || '取消'
         // const unlikeText = this.props.unlikeText || '点赞'
-
+        // eslint-disable-next-line
         const wordings = this.props.wordings || {
             likeText:'取消',
             unlikeText:'点赞'
