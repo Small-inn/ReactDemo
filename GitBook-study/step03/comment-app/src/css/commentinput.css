@@ -1,0 +1,46 @@
+.assess_wrapper .user {
+  display: flex;
+}
+.assess_wrapper .user .username {
+  flex-basis: 100px;
+  color: #000;
+  font-weight: bold;
+  line-height: 24px;
+}
+.assess_wrapper .user .input {
+  flex: 1;
+  outline: none;
+  border: 1px solid #ccc;
+  height: 24px;
+  padding-left: 6px;
+}
+.assess_wrapper .container {
+  margin-top: 20px;
+  display: flex;
+}
+.assess_wrapper .container .title {
+  flex-basis: 100px;
+  color: #000;
+  font-weight: bold;
+  line-height: 24px;
+}
+.assess_wrapper .container .textarea {
+  padding: 6px 0 0 6px;
+  height: 130px;
+  flex: 1;
+  resize: none;
+  border: 1px solid #ccc;
+}
+.assess_wrapper .submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.assess_wrapper .submit .submit_btn {
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 5px 24px;
+  background-color: #38A2D1;
+  border-radius: 4px;
+}
