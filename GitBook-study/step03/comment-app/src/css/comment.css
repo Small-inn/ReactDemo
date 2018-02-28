@@ -1,0 +1,20 @@
+.comment_wrapper {
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid #ccc;
+}
+.comment_wrapper .comment_user {
+  width: 15%;
+  padding: 10px;
+}
+.comment_wrapper .comment_user span {
+  color: cyan;
+  font-weight: 600;
+}
+.comment_wrapper .pragh {
+  margin: 0;
+  padding: 8px;
+  padding-left: 6px;
+  flex: 1;
+  font: normal 550 14px/24px Microsoft YaHei;
+}

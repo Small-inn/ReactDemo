@@ -23,6 +23,8 @@ class CommentInput extends Component {
         if(this.props.onSubmit){
             const { username, content } = this.state
             this.props.onSubmit({username,content})
+            // const obj = this.state
+            // this.props.onSubmit(obj.username+"----"+obj.content)
         }
         // this.setState({username:'',content: ''})
         this.setState({content: ''})
