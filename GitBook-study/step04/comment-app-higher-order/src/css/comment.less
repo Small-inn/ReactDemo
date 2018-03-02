@@ -17,4 +17,21 @@
         flex: 1;
         font: normal 550 14px/24px Microsoft YaHei;
     }
+    .comment_createdtime{
+        padding-bottom: 10px;
+        display: flex;
+        align-items:  flex-end;
+    }
+    .del_content{
+        display: none;
+        height: 24px;
+        outline: none;
+        border: none;
+        background: linear-gradient(to bottom,#ccc 30%,#ddd 60%,#ccc 100%);
+    }
+    &:hover{
+        .del_content{
+            display: block;
+        }
+    }
 }
